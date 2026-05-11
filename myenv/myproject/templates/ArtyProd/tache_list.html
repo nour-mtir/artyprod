@@ -1,0 +1,86 @@
+{% extends 'ArtyProd/adminbase.html' %}
+
+
+{% block content %}
+{% load static %}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+
+    label #sidebar_btn {
+      z-index: 1;
+      color: #fff;
+      position: fixed;
+      cursor: pointer;
+      left: 300px;
+      padding-left: 60px;
+      margin-top: 15px;
+      font-size: 20px;
+      transition: 0.5s;
+      transition-property: color;
+    }
+  </style>
+</head>
+
+<div class="container">
+  <h2>Liste des tâches</h2>
+  <a class="btn btn-primary mb-3" href="{% url 'tache_create' %}">Ajouter une tâche</a>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Personnel</th>
+        <th>Date de début</th>
+        <th>Date de fin</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tache in tache_list %}
+      <tr>
+        <td>{{ tache.nom }}</td>
+        <td>{{ tache.personnel }}</td>
+        <td>{{ tache.date_debut }}</td>
+        <td>{{ tache.date_fin }}</td>
+        <td>
+          <a class="btn btn-info" href="{% url 'tache_detail' tache.pk %}">Détail</a>
+          <a class="btn btn-primary" href="{% url 'tache_update' tache.pk %}">Modifier</a>
+          <a class="btn btn-danger" href="{% url 'tache_delete' tache.pk %}">Supprimer</a>
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="5">Aucune tâche trouvée.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+  integrity="sha384-TPXSoW+Yv6+UP7N7A3KlkRkDjrHl4pUzqZzCA2lNQDj9RvcAYHJZOb1tp6QxrftN"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"></script>
+
+{% endblock content %}

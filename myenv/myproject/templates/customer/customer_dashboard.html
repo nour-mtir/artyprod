@@ -1,0 +1,71 @@
+{% extends 'customer/customerbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <style>
+    /* Custom CSS styling */
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 20px;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<!-- customer_dashboard.html -->
+<div class="container">
+  <h1>Welcome, {{ customer.user.username }}</h1>
+
+  <!-- Display total number of questions -->
+  <p>Total Questions: {{ total_question }}</p>
+
+  <!-- Display project details -->
+  <h2>Projects:</h2>
+  <ul class="list-group">
+    {% for project in projects %}
+    <li class="list-group-item">
+      <strong>Project Name:</strong> {{ project.nom }}<br>
+      <strong>Description:</strong> {{ project.description }}<br>
+      <strong>Client:</strong> {{ project.client }}<br>
+      <!-- Display other project details as needed -->
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<!-- Add any additional scripts you may need here -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+{% endblock content %}
+

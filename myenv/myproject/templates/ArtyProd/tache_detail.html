@@ -1,0 +1,26 @@
+{% extends 'ArtyProd/adminbase.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container">
+  <h1>Tâche détaillée</h1>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ tache.nom }}</h5>
+      <p class="card-text">{{ tache.description }}</p>
+      <p class="card-text">Date de début : {{ tache.date_debut }}</p>
+      <p class="card-text">Date de fin : {{ tache.date_fin }}</p>
+      <p class="card-text">Projet : {{ tache.projet }}</p>
+      <p class="card-text">Assignée à :</p>
+      <ul class="list-group">
+        {% for personnel in tache.assignee_a.all %}
+          <li class="list-group-item">{{ personnel }}</li>
+        {% endfor %}
+      </ul>
+      <p class="card-text">Complétée : {{ tache.completee }}</p>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

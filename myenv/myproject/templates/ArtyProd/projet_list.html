@@ -1,0 +1,50 @@
+{% extends 'ArtyProd/adminbase.html' %}
+
+{% block content %}
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+  </style>
+
+  <h1>Liste des projets</h1>
+
+  <a href="{% url 'projet-create' %}" class="btn btn-primary">Créer un projet</a>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for projet in projets %}
+        <tr>
+          <td>{{ projet.nom }}</td>
+          <td>
+            <a href="{% url 'projet-detail' projet.id %}" class="btn btn-primary">Voir les détails</a>
+            <a href="{% url 'projet-update' projet.id %}" class="btn btn-primary">Modifier</a>
+            <a href="{% url 'projet-delete' projet.id %}" class="btn btn-danger">Supprimer</a>
+          </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="2">Aucun projet trouvé.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

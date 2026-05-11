@@ -1,0 +1,41 @@
+{% extends 'customer/customerbase.html' %}
+
+{% load static %}
+
+{% block content %}
+  <h1>Détails du projet</h1>
+
+  <h2>{{ projet.nom }}</h2>
+  <p>Description : {{ projet.description }}</p>
+  <p>Date de début : {{ projet.date_debut }}</p>
+  <p>Date de fin : {{ projet.date_fin }}</p>
+  <p>Équipe : {{ projet.equipe }}</p>
+  <p>Fichier : {{ projet.fichier }}</p>
+
+{% endblock %}
+
+<style>
+  h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    color: #555;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #777;
+    margin-bottom: 5px;
+  }
+
+  .btn {
+    margin-top: 10px;
+  }
+</style>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

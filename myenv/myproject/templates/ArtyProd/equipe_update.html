@@ -1,0 +1,45 @@
+{% extends 'ArtyProd/adminbase.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifier l'équipe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <style>
+        /* Votre propre CSS personnalisé */
+
+        /* Style du formulaire */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Style des boutons */
+        .btn {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Modifier l'équipe</h1>
+
+        <form method="POST" action="{% url 'equipe-update' equipe.pk %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="nom">Nom de l'équipe:</label>
+                <input type="text" id="nom" name="nom" class="form-control" value="{{ equipe.nom }}">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" class="form-control">{{ equipe.description }}</textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary"><i class="bi bi-pencil"></i> Modifier</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}

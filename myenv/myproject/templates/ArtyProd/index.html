@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+  #welcome-section {
+    font-size: 50px;
+    color: white;
+    background-image: url(https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
+     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-shadow: 2px 2px 4px var(--blue-color);
+    display: block;
+    position: relative;
+    top: 0;
+    margin: 0 auto;
+    width: 102%;
+    height: 100vh;
+    padding: 200px 50px 50px 50px;
+  }
+  
+ 
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+  
+  body, html {
+    height: 100%;
+    line-height: 1.8;
+  }
+  
+  /* Full height image header */
+  .bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    
+    min-height: 100%;
+  }
+  
+  .w3-bar .w3-button {
+    padding: 16px;
+  }
+  
+  
+  
+</style>
+<body>
+  {% include "ArtyProd/navbar.html" %}
+  <body>
+    <section id="welcome-section">
+      <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+        <div class="w3-display-left w3-text-white" style="padding:48px">
+          <span class="w3-jumbo w3-hide-small">Start something that matters</span><br>
+          <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
+          <span class="w3-large">Stop wasting valuable time with projects that just isn't you.</span>
+          <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>
+        </div> 
+        <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+          <i class="fa fa-facebook-official w3-hover-opacity"></i>
+          <i class="fa fa-instagram w3-hover-opacity"></i>
+          <i class="fa fa-snapchat w3-hover-opacity"></i>
+          <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+          <i class="fa fa-twitter w3-hover-opacity"></i>
+          <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+      </header>
+      
+    </section>
+    <!-- About Section -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+  <h3 class="w3-center">ABOUT THE COMPANY</h3>
+  <p class="w3-center w3-large">Key features of our company</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Responsive</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Passion</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Design</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Support</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+  </div>
+</div>
+
+    <!-- Promo Section - "We know design" -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <h3>We know design.</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore.</p>
+      <p><a href="" class="w3-button w3-black"><i class="fa fa-th"> </i> View Our Works</a></p>
+    </div>
+    <div class="w3-col m6">
+      <img class="w3-image w3-round-large" src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGhvbmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Buildings" width="400" height="500">
+    </div>
+  </div>
+</div>
+
+
+<!-- Team Section -->
+<div class="w3-container" style="padding:128px 16px" id="team">
+  <h3 class="w3-center">THE TEAM</h3>
+  <p class="w3-center w3-large">The ones who runs this company</p>
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="https://scontent.ftun15-1.fna.fbcdn.net/v/t39.30808-6/278711326_1093339084557355_6837179691661526124_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_ohc=s9lqXf9qFBoAX9RQRyY&_nc_ht=scontent.ftun15-1.fna&oh=00_AfCRtHMql1pIO7T15k1kKSQqPlyI362M_mav-zEDKZv3fw&oe=646F2C29" alt="Nour" style="width:100%">
+        <div class="w3-container">
+          <h3>Nour Mtir </h3>
+          <p class="w3-opacity">CEO & Founder</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="https://scontent.ftun15-1.fna.fbcdn.net/v/t39.30808-6/336667618_777069453737969_8275480371428327794_n.jpg?stp=cp6_dst-jpg&_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Q0-ivCIeho8AX9JuXiR&_nc_ht=scontent.ftun15-1.fna&oh=00_AfD0QYtD7CKnoMOgp53Rv7ymIvJxmowPZp29OlOeTl9hHA&oe=646F6296" alt="Eya" style="width:100%">
+        <div class="w3-container">
+          <h3>Eya Omrani</h3>
+          <p class="w3-opacity">Art Director</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="https://scontent.ftun15-1.fna.fbcdn.net/v/t39.30808-6/331711137_582125997169413_3553370496749950278_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=5qNt0v7kqJEAX940Q1m&_nc_ht=scontent.ftun15-1.fna&oh=00_AfAnh_qqpYBalwDhR22B9IQRUtqE0DYRfiht3tS9Uln8gg&oe=646ECAF9" alt="Ahlem" style="width:100%">
+        <div class="w3-container">
+          <h3>Ahlem Chikahoui</h3>
+          <p class="w3-opacity">Web Designer</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="https://scontent.ftun15-1.fna.fbcdn.net/v/t39.30808-6/342816436_531757039168161_4633010708005975334_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=_0Ki8hz07AQAX-qM4Ar&_nc_ht=scontent.ftun15-1.fna&oh=00_AfCA4HkpUDM_y2-NC0JwRo9xRjs10nd--zziqtzQpazhpw&oe=646E1A44" alt="Maher" style="width:100%">
+        <div class="w3-container">
+          <h3>Maher Chikhaoui</h3>
+          <p class="w3-opacity">Designer</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Promo Section "Statistics" -->
+<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">14+</span>
+    <br>Partners
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">55+</span>
+    <br>Projects Done
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">89+</span>
+    <br>Happy Clients
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">150+</span>
+    <br>Meetings
+  </div>
+</div>
+<!-- Work Section -->
+<div class="w3-container" style="padding:128px 16px" id="work">
+  <h3 class="w3-center">OUR WORK</h3>
+  <p class="w3-center w3-large">What we've done for people</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+      <img src="https://images.unsplash.com/photo-1634025151266-4773d6189169?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGltYWdlJTIwM2R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://images.unsplash.com/photo-1612699001349-617d44e98faf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MnxMUHVUYnBfbkhTRXx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://images.unsplash.com/photo-1495366691023-cc4eadcc2d7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTJ8TFB1VGJwX25IU0V8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="1">
+    </div>
+    
+    <div class="w3-col l3 m6">
+      <img src="https://i.pinimg.com/236x/3c/3e/bd/3c3ebdbf72bd6263522fc8155e22c24a.jpg" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="1">
+    </div>
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col l3 m6">
+      <img src="https://i.pinimg.com/236x/6a/34/67/6a34678e5c8b38c2d1644476f3816dcf.jpg" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://i.pinimg.com/236x/5d/c2/3b/5dc23b33abee742bd87824b891ef3594.jpg" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="A camera">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://i.pinimg.com/236x/90/db/b3/90dbb39a6eef5d18ebdde855ea65c8fa.jpg" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://i.pinimg.com/236x/92/55/75/9255759a5d70973995fe84e1221142c4.jpg" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tableturner">
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+  {% include "ArtyProd/footer.html" %}
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+  
+ 
+ 
+  

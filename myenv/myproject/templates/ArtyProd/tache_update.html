@@ -1,0 +1,57 @@
+{% extends 'ArtyProd/adminbase.html' %}
+
+{% block content %}
+<div class="container">
+  <h2>Mise à jour de la tâche "{{ tache.nom }}"</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="nom">Nom:</label>
+      <input type="text" class="form-control" id="nom" name="nom" value="{{ tache.nom }}">
+    </div>
+    <div class="form-group">
+      <label for="personnel">Personnel:</label>
+      <select class="form-control" id="personnel" name="personnel">
+        {% for personnel in personnel_list %}
+          <option value="{{ personnel.pk }}" {% if tache.personnel_id == personnel.pk %}selected{% endif %}>{{ personnel.user.username }}</option>
+        {% endfor %}
+      </select>      
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea class="form-control" id="description" name="description" rows="5">{{ tache.description }}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="projet">Projet:</label>
+      <select class="form-control" id="projet" name="projet">
+        {% for projet in projet_list %}
+          <option value="{{ projet.pk }}" {% if tache.projet.pk == projet.pk %}selected{% endif %}>{{ projet.nom }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="date_debut">Date de début:</label>
+      <input type="date" class="form-control" id="date_debut" name="date_debut" value="{{ tache.date_debut }}">
+    </div>
+    <div class="form-group">
+      <label for="date_fin">Date de fin:</label>
+      <input type="date" class="form-control" id="date_fin" name="date_fin" value="{{ tache.date_fin }}">
+    </div>
+    <div class="form-group">
+      <label for="assignee_a">Assigné à:</label>
+      <select multiple class="form-control" id="assignee_a" name="assignee_a">
+        {% for personnel in personnel_list %}
+          <option value="{{ personnel.pk }}" {% if personnel.pk in tache.assignee_a.all %}selected{% endif %}>{{ personnel.user.username }}</option>
+        {% endfor %}
+      </select>
+      
+    </div>
+    <div class="form-group">
+      <label for="completee">Complétée:</label>
+      <input type="checkbox" id="completee" name="completee" {% if tache.completee %}checked{% endif %}>
+    </div>
+    <button type="submit" class="btn btn-primary">Mettre à jour</button>
+    <a class="btn btn-secondary" href="{% url 'projet_detail' tache.projet.pk %}">Annuler</a>
+  </form>
+</div>
+{% endblock content %}

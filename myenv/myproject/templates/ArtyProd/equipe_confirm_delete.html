@@ -1,0 +1,46 @@
+{% extends 'ArtyProd/adminbase.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supprimer l'équipe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <style>
+        /* Votre propre CSS personnalisé */
+
+        /* Style de la boîte de confirmation */
+        .card {
+            margin-top: 20px;
+        }
+
+        /* Style du message de confirmation */
+        .card-body {
+            padding: 30px;
+        }
+
+        /* Style des boutons */
+        .btn {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h1>Êtes-vous sûr de vouloir supprimer {{ equipe.nom }}?</h1>
+                <p>Cette action est irréversible et supprimera définitivement l'équipe.</p>
+
+                <form method="POST" action="{% url 'equipe-delete' equipe.pk %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Supprimer</button>
+                    <a href="{% url 'equipe-list' %}" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Retour à la liste</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}

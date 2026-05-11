@@ -1,0 +1,35 @@
+{% extends 'ArtyProd/adminbase.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Détails de l'équipe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <style>
+        /* Votre propre CSS personnalisé */
+
+        /* Style des boutons */
+        .btn {
+            margin-top: 5px;
+        }
+
+        /* Style de l'icône */
+        .bi {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Détails de l'équipe</h1>
+        <h2>{{ equipe.nom }}</h2>
+        <p>{{ equipe.description }}</p>
+
+        <a class="btn btn-warning" href="{% url 'equipe-update' equipe.pk %}"><i class="bi bi-pencil"></i> Modifier</a>
+        <a class="btn btn-danger" href="{% url 'equipe-delete' equipe.pk %}"><i class="bi bi-trash"></i> Supprimer</a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}

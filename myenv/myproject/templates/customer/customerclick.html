@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  {% include "ArtyProd/navbar.html" %}
+  <br><br>
+  <div class="jumbotron text-center" style="margin-bottom:0px;">
+    <h1 class="display-4">Bonjour, Client</h1>
+    <p class="lead">Bienvenue Sur ArtyProd</p>
+    <hr class="my-4">
+    <p>Vous pouvez accéder à diverses fonctionnalités après vous être connecté.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="customersignup" role="button">Créer votre compte</a>
+      <a class="btn btn-primary btn-lg" href="customerlogin" role="button">Connexion</a>
+    </p>
+    <br><br><br>
+  </div>
+ 
+  {% include "ArtyProd/footer.html" %}
+
+  <!-- Add Bootstrap JS (Optional) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body> 
+
+</html>
+

@@ -1,0 +1,52 @@
+{% extends 'ArtyProd/adminbase.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des équipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <style>
+        /* Votre propre CSS personnalisé */
+
+        /* Style de la liste */
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Style des boutons */
+        .btn {
+            margin-top: 5px;
+        }
+
+        /* Style de l'icône */
+        .bi {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Liste des équipes</h1>
+        <a class="btn btn-primary mb-3" href="{% url 'ArtyProd/equipe-create' %}"><i class="bi bi-plus"></i> Ajouter une équipe</a>
+        <ul class="list-group">
+            {% for equipe in equipes %}
+                <li class="list-group-item">
+                    {{ equipe.nom }}
+                    <div class="float-end">
+                        <a class="btn btn-secondary btn-sm me-1" href="{% url 'equipe-detail' equipe.pk %}"><i class="bi bi-info-circle"></i> Détails</a>
+                        <a class="btn btn-warning btn-sm me-1" href="{% url 'equipe-update' equipe.pk %}"><i class="bi bi-pencil-square"></i> Modifier</a>
+                        <a class="btn btn-danger btn-sm" href="{% url 'equipe-delete' equipe.pk %}"><i class="bi bi-trash"></i> Supprimer</a>
+                    </div>
+                </li>
+            {% empty %}
+                <li class="list-group-item">Aucune équipe trouvée.</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}

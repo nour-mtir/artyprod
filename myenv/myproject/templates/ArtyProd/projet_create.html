@@ -1,0 +1,29 @@
+{% extends 'ArtyProd\adminbase.html' %}
+
+{% load static %}
+
+{% block content %}
+  <h1>Créer un projet</h1>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+  </form>
+{% endblock %}
+
+<style>
+  h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    margin-top: 10px;
+  }
+</style>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

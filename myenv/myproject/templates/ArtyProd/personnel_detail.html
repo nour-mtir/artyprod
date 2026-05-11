@@ -1,0 +1,77 @@
+{% extends 'ArtyProd/adminbase.html' %}
+
+{% block content %}
+{% load static %}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+
+    label #sidebar_btn {
+      z-index: 1;
+      color: #fff;
+      position: fixed;
+      cursor: pointer;
+      left: 300px;
+      padding-left: 60px;
+      margin-top: 15px;
+      font-size: 20px;
+      transition: 0.5s;
+      transition-property: color;
+    }
+  </style>
+</head>
+
+<br><br>
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h6 class="panel-title">Détails du personnel</h6>
+    </div>
+    <div class="panel-body">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row">Utilisateur</th>
+            <td>{{ personnel.user.username }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Équipe</th>
+            <td>{{ personnel.equipe }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Poste</th>
+            <td>{{ personnel.poste }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Photo</th>
+            <td>
+              {% if personnel.img %}
+              <td><img src="{% static personnel.img.url %}" alt="Photo" height="150px" width="150px" /></td>
+              {% else %}
+                <p>Aucune photo disponible</p>
+              {% endif %}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<br><br><br><br><br><br>
+{% endblock content %}
